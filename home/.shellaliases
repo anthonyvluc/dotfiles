@@ -27,15 +27,25 @@ alias .3='cd ../../../'                     # Go back 3 directory levels
 alias .4='cd ../../../../'                  # Go back 4 directory levels
 alias .5='cd ../../../../../'               # Go back 5 directory levels
 alias .6='cd ../../../../../../'            # Go back 6 directory levels
-alias f='open -a Finder ./'                 # f:            Opens current directory in MacOS Finder
-alias ~="cd ~"                              # ~:            Go Home
-alias c='clear'                             # c:            Clear terminal display
-alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable Paths
-
+alias f='open -a Finder ./'                 # Opens current directory in MacOS Finder
+alias ~="cd ~"                              # Go Home
+alias c='clear'                             # Clear terminal display
+alias path='echo -e ${PATH//:/\\n}'         # Echo all executable Paths
+ 
 ############################################
 # MacOS Specific - todo
 ############################################
-# trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the MacOS trash
-# ql () { qlmanage -p "$*" >& /dev/null; }    # ql:           Opens any file in MacOS Quicklook Preview
-# alias DT='tee ~/Desktop/terminalOut.txt'    # DT:           Pipe content to file on MacOS Desktop
+# trash () { command mv "$@" ~/.Trash ; }     # Moves a file to the MacOS trash
+# ql () { qlmanage -p "$*" >& /dev/null; }    # Opens any file in MacOS Quicklook Preview
+# alias DT='tee ~/Desktop/terminalOut.txt'    # Pipe content to file on MacOS Desktop
+# alias flushdns='dscacheutil -flushcache'    # Flush the DNS
+
+# Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
+# alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; mas upgrade; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
+
+# Empty the Trash on all mounted volumes and the main HDD.
+# Also, clear Apple’s System Logs to improve shell startup speed.
+# Finally, clear download history from quarantine. https://mths.be/bum
+# alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite4 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+
 
