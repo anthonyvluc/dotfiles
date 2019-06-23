@@ -51,4 +51,16 @@ else
 
 fi
 
+bot "Dotfiles Setup"
+ask "symlink ./home/* files in ~/ (these are the dotfiles)?"
+if [[ $? == 0 ]]; then
+    bot "Creating symlinks for project files..."
+    pushd home > /dev/null 2>&1 # Push home/ to directory stack
+
+    # TODO: 
+    for file in .*; do
+    done
+
+    popd > /dev/null 2>&1 # Pop from directory stack
+fi
 
