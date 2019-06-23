@@ -9,10 +9,14 @@ set visualbell          " Use visual bell (no beeping)
 " set noerrorbells       " Don't beep
 set mouse=a             " Use mouse everywhere
 set ruler               " Show row and column ruler information
-set list                " Show tabs
+set list                " Ensure we  show tabs
+set listchars=tab:>-,trail:- " Show tabs and trailing whitespace
 set nowrap              " Do not wrap line
-set cursorcolumn
-set cursorline
+set tw=80               " Text 
+set cmdheight=2         " Command window height
+set scrolloff=5         " Keep 5 lines for (top/bottom) scope
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+set laststatus=2        " Always show the status line
 
 """"""""""""""""""""""""
 "
@@ -21,7 +25,6 @@ set hlsearch            " Highlight all search results
 set smartcase           " Enable smart-case search
 set ignorecase          " Always case-insensitive
 set incsearch           " Searches for strings incrementally
-
 
 """"""""""""""""""""""""
 " Whitespace
@@ -33,7 +36,9 @@ set tabstop=4           " Real tabs should be 4, but they will show with set lis
 set smartindent         " Enable smart-indent
 set smarttab            " Enable smart-tabs
 set expandtab           " Use spaces instead of tabs
+set copyindent          " 
 set preserveindent      " 
+set cindent             " C-Style indenting
 
 """"""""""""""""""""""""
 "
