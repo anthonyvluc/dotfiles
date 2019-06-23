@@ -1,0 +1,22 @@
+[user]
+	name = GITHUBFULLNAME
+	email = GITHUBEMAIL
+
+[github]
+	user = GITHUBUSER
+
+[core]
+	editor = vim
+	us = auto
+
+
+
+[alias]
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	pl = pull
+	ps = push
+
+[color]
+	ui = true
+
