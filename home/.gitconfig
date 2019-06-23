@@ -1,22 +1,47 @@
 [user]
-	name = GITHUBFULLNAME
-	email = GITHUBEMAIL
+    name = GITHUBFULLNAME
+    email = GITHUBEMAIL
 
 [github]
-	user = GITHUBUSER
+    user = GITHUBUSER
 
 [core]
-	editor = vim
-	us = auto
-
-
-
-[alias]
-	unstage = reset HEAD --
-	last = log -1 HEAD
-	pl = pull
-	ps = push
+    editor = vim
+    us = auto
+    autocrlf = input
+    # autocrlf = true # For Windows to convert line endings
+    safecrlf = warn
 
 [color]
-	ui = true
+    ui = true
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[alias]
+    co = checkout
+    cam = commit -a -m
+    d = diff --color-words
+    dh = diff HEAD
+    dc = diff --staged
+    dcw = diff --color-words
+    last = log -1 HEAD
+    lg = log --graph
+    lod = log --oneline --decorate
+    listconf = config --global --list
+    lp = log -p
+    pl = pull
+    ps = push
+    s = status -s -u
+    unstage = reset HEAD --
 
