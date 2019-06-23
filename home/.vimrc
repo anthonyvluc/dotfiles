@@ -5,8 +5,8 @@ set relativenumber      " Show line numbers
 set linebreak           " Break lines at word (requires Wrap lines)
 set textwidth=100       " Line wrap (number of cols)
 set showmatch           " Highlight matching brace
-set visualbell          " Use visual bell (no beeping)
-" set noerrorbells       " Don't beep
+set novisualbell        " Dont' use visual bell
+set noerrorbells        " Don't beep
 set mouse=a             " Use mouse everywhere
 set ruler               " Show row and column ruler information
 set list                " Ensure we  show tabs
@@ -21,10 +21,12 @@ set laststatus=2        " Always show the status line
 """"""""""""""""""""""""
 "
 """"""""""""""""""""""""
+set showmatch           " Show matching brackets
+set mat=5               " How many tenths of a second to blink matching brackets for
 set hlsearch            " Highlight all search results
+set incsearch           " Searches for strings incrementally
 set smartcase           " Enable smart-case search
 set ignorecase          " Always case-insensitive
-set incsearch           " Searches for strings incrementally
 
 """"""""""""""""""""""""
 " Whitespace
@@ -39,6 +41,7 @@ set expandtab           " Use spaces instead of tabs
 set copyindent          " 
 set preserveindent      " 
 set cindent             " C-Style indenting
+filetype plugin indent on " Load filetype plugin and indent settings
 
 """"""""""""""""""""""""
 "
