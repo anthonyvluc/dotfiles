@@ -1,0 +1,27 @@
+########
+# Node #
+########
+*.log
+node_modules
+
+############
+# Security #
+############
+id_rsa
+
+#######
+# Vim #
+#######
+Session.vim
+*~
+
+######################
+# OS Generated Files #
+######################
+.DS_Store
+.Trashes
+.idea/
+.vscode
+.vagrant/
+._*
+
