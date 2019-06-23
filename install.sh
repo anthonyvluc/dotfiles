@@ -9,6 +9,12 @@ if [[ `uname` == 'Darwin' ]]; then
     # MacOS
     ok "System == Darwin"
 
+    # Install XCode
+    bot "Ensuring build/install tools are available"
+    xcode-select --install 2>&1 > /dev/null
+    sudo xcode-select -s /Applications/Xcode.app/Contents/Developer 2>&1 > /dev/null
+    sudo xcodebuild -license accept 2>&1 > /dev/null
+
     # Check for Homebrew, and install if we don't have it.
     running "Checking Homebrew..."
     brew_bin=$(which brew) 2>&1 > /dev/null
