@@ -6,6 +6,7 @@
     user = GITHUBUSER
 
 [core]
+    excludesfile = ~/.gitignore
     editor = vim
     us = auto
     autocrlf = input
