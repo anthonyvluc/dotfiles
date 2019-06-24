@@ -92,9 +92,4 @@ fi
 # source ./macos.sh
 # macos
 
-#############################################
-# Reset Applications                        #
-#############################################
-
-
 bot "Installation successfully completed!"
