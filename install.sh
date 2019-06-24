@@ -56,12 +56,23 @@ if [[ `uname` == 'Darwin' ]]; then
         fi
     fi
 
+    # Install Homebrew packages.
+
+
 else
     # Linux
     ok "System == Linux"
 
     # TODO: Handle various Linux flavors.
 
+fi
+
+bot "Setting Default Shell"
+CURRENTSHELL=$(dscl . -read /Users/$USER UserShell | awk '{print $2}')
+if [[ "$CURRENTSHELL" != "/usr/local/bin/zsh" ]]; then
+  bot "Setting newer Homebrew zsh (/usr/local/bin/zsh) as your shell (password required)"
+  sudo dscl . -change /Users/$USER UserShell $SHELL /usr/local/bin/zsh > /dev/null 2>&1
+  ok
 fi
 
 bot "Dotfiles Setup"
@@ -76,14 +87,6 @@ if [[ $? == 0 ]]; then
     done
 
     popd > /dev/null 2>&1 # Pop from directory stack
-fi
-
-# Set default shell
-CURRENTSHELL=$(dscl . -read /Users/$USER UserShell | awk '{print $2}')
-if [[ "$CURRENTSHELL" != "/usr/local/bin/zsh" ]]; then
-  bot "Setting newer Homebrew zsh (/usr/local/bin/zsh) as your shell (password required)"
-  sudo dscl . -change /Users/$USER UserShell $SHELL /usr/local/bin/zsh > /dev/null 2>&1
-  ok
 fi
 
 #############################################
