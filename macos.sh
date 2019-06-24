@@ -31,6 +31,9 @@ macos() {
     defaults write NSGlobalDomain AppleShowScrollBars -string "Always"; ok
     # Possible values: `WhenScrolling`, `Automatic` and `Always`
 
+    running "Increase window resize speed for Cocoa applications"
+    defaults write NSGlobalDomain NSWindowResizeTime -float 0.001; ok
+
     running "Expand save panel by default"
     defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
     defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true; ok
