@@ -4,6 +4,10 @@
 source ./lib/echos.sh
 source ./lib/utils.sh
 
+#############################################
+# Install Packages and Programs             #
+#############################################
+
 # Determine operating system and package manager.
 bot "Analyzing system..."
 if [[ `uname` == 'Darwin' ]]; then
@@ -63,4 +67,28 @@ if [[ $? == 0 ]]; then
 
     popd > /dev/null 2>&1 # Pop from directory stack
 fi
+
+# Set default shell
+CURRENTSHELL=$(dscl . -read /Users/$USER UserShell | awk '{print $2}')
+if [[ "$CURRENTSHELL" != "/usr/local/bin/zsh" ]]; then
+  bot "Setting newer Homebrew zsh (/usr/local/bin/zsh) as your shell (password required)"
+  sudo dscl . -change /Users/$USER UserShell $SHELL /usr/local/bin/zsh > /dev/null 2>&1
+  ok
+fi
+
+#############################################
+# System Settings                           #
+#############################################
+
+#############################################
+# Terminal Settings                         #
+#############################################
+
+#############################################
+# Reset Applications                        #
+#############################################
+
+
+bot "Installation successfully completed!"
+
 
