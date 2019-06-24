@@ -381,8 +381,8 @@ macos() {
     running "Installing the custom theme for iTerm (opening file)"
     open "./configs/afterglow.itermcolors"; ok
 
-    # running "Don’t display the annoying prompt when quitting iTerm"
-    # defaults write com.googlecode.iterm2 PromptOnQuit -bool false; ok
+    running "Don’t display the annoying prompt when quitting iTerm"
+    defaults write com.googlecode.iterm2 PromptOnQuit -bool false; ok
 
     running "hide tab title bars"
     defaults write com.googlecode.iterm2 HideTab -bool true; ok
