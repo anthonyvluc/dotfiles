@@ -72,6 +72,7 @@ if [[ $? == 0 ]]; then
 
     # TODO: 
     for file in .*; do
+        echo $file
     done
 
     popd > /dev/null 2>&1 # Pop from directory stack
@@ -88,6 +89,7 @@ fi
 #############################################
 # System Settings                           #
 #############################################
+# ./macos.sh
 
 #############################################
 # Terminal Settings                         #
