@@ -491,12 +491,28 @@ macos() {
     defaults write com.apple.appstore ShowDebugMenu -bool true; ok
 
     ############################################
+    bot "Photos"
+    ############################################
+    bot "Prevent Photos from opening automatically when devices are plugged in"
+    defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true; ok
+
+    ############################################
     # Kill Affected Applications               #
     ############################################
     bot "OK. Note that some of these changes require a logout/restart to take effect. Killing affected applications (so they can reboot)...."
-    for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
-      "Dock" "Finder" "Mail" "SystemUIServer" "iCal" "Terminal"; do
-      killall "${app}" > /dev/null 2>&1
+    for app in "Activity Monitor" \
+            "Address Book" \
+            "Calendar" \
+            "Contacts" \
+            "cfprefsd" \
+            "Dock" \
+            "Finder" \
+            "Mail" \
+            "Photos" \
+            "SystemUIServer" \
+            "Terminal" \
+            "iCal" ; do
+            killall "${app}" > /dev/null 2>&1
     done
 }
 
