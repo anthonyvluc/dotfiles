@@ -31,7 +31,7 @@ set laststatus=2        " Always show the status line
 """"""""""""""""""""""""
 set showmatch           " Show matching brackets
 set mat=5               " How many tenths of a second to blink matching brackets for
-set hlsearch            " Highlight all search results
+set nohlsearch          " Don't highlight all search results
 set incsearch           " Searches for strings incrementally
 set smartcase           " Enable smart-case search
 set ignorecase          " Always case-insensitive
