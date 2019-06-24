@@ -1,15 +1,29 @@
 #!/usr/bin/env bash
 # TODO: figure out how to include this
 
-# Taps
-# TODO: figure out taps and usage
-tap 'caskroom/cask'
-tap 'caskroom/eid'
-tap 'caskroom/fonts'
-tap 'caskroom/versions'
-tap 'homebrew/bundle'
+# Initial #
 
-# Essentials
+# Install GNU core utilities (those that come with macOS are outdated).
+# Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
+brew install coreutils
+
+# Install some other useful utilities like `sponge`.
+brew install moreutils
+# Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
+brew install findutils
+# Install GNU `sed`, overwriting the built-in `sed`.
+brew install gnu-sed --with-default-names
+# Install Bash 4.
+# brew install bash
+# brew install bash-completion2
+
+# Install more recent versions of some macOS tools.
+brew install vim --with-override-system-vi
+brew install grep
+brew install openssh
+brew install gmp
+
+# Essentials #
 brew install \
     bash \
     cmake \
@@ -24,12 +38,13 @@ brew install \
     gnupg \
     go \
     google-chrome \
-    grep \
     netcat \
     nmap \
     node \
     openssl \
+    php \
     python \
+    p7zip \
     react-native-cli \
     readline \
     ripgrep \
@@ -37,7 +52,6 @@ brew install \
     ruby \
     tmux \
     typescript \
-    vim \
     wget \
     zsh
 
@@ -60,7 +74,7 @@ brew cask install \
     visual-studio-code \
     vlc
 
-# Personal
+# Personal #
 brew install \
     youtube-dl
 
@@ -75,7 +89,7 @@ brew cask install \
     qbittorrent \
     youtube-to-mp3
 
-# Optional
+# Optional #
 brew install \
     angular-cli \
     awscli \
@@ -85,6 +99,7 @@ brew install \
     packer \
     perl \
     telnet \
+    vbindiff \
     weechat
 
 brew cask install \
