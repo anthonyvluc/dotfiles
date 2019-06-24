@@ -21,6 +21,24 @@ macos() {
     running "Menu bar: disable transparency"
     defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false; ok
 
+    # running "Set highlight color to green"
+    # defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"; ok
+
+    running "Set sidebar icon size to medium"
+    defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2; ok
+
+    running "Always show scrollbars"
+    defaults write NSGlobalDomain AppleShowScrollBars -string "Always"; ok
+    # Possible values: `WhenScrolling`, `Automatic` and `Always`
+
+    running "Expand save panel by default"
+    defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+    defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true; ok
+
+    running "Expand print panel by default"
+    defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+    defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true; ok
+
     running "Save to disk (not to iCloud) by default"
     defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false; ok
 
