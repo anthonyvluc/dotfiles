@@ -2,7 +2,6 @@
 
 macos() {
 
-
     ############################################
     bot "Tweaking Standard System Settings"
     ############################################
@@ -209,6 +208,209 @@ macos() {
       General -bool true \
       OpenWith -bool true \
       Privileges -bool true; ok
+
+    ############################################
+    bot "Dock and Dashboard Configuration"
+    ############################################
+
+ng "Enable highlight hover effect for the grid view of a stack (Dock)"
+defaults write com.apple.dock mouse-over-hilite-stack -bool true;ok
+
+running "Set the icon size of Dock items to 36 pixels"
+defaults write com.apple.dock tilesize -int 36;ok
+
+running "Change minimize/maximize window effect to scale"
+defaults write com.apple.dock mineffect -string "scale";ok
+
+running "Minimize windows into their application’s icon"
+defaults write com.apple.dock minimize-to-application -bool true;ok
+
+running "Enable spring loading for all Dock items"
+defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true;ok
+
+running "Show indicator lights for open applications in the Dock"
+defaults write com.apple.dock show-process-indicators -bool true;ok
+
+running "Don’t animate opening applications from the Dock"
+defaults write com.apple.dock launchanim -bool false;ok
+
+running "Speed up Mission Control animations"
+defaults write com.apple.dock expose-animation-duration -float 0.1;ok
+
+running "Don’t group windows by application in Mission Control"
+# (i.e. use the old Exposé behavior instead)
+defaults write com.apple.dock expose-group-by-app -bool false;ok
+
+running "Disable Dashboard"
+defaults write com.apple.dashboard mcx-disabled -bool true;ok
+
+running "Don’t show Dashboard as a Space"
+defaults write com.apple.dock dashboard-in-overlay -bool true;ok
+
+running "Don’t automatically rearrange Spaces based on most recent use"
+defaults write com.apple.dock mru-spaces -bool false;ok
+
+running "Remove the auto-hiding Dock delay"
+defaults write com.apple.dock autohide-delay -float 0;ok
+running "Remove the animation when hiding/showing the Dock"
+defaults write com.apple.dock autohide-time-modifier -float 0;ok
+
+running "Automatically hide and show the Dock"
+defaults write com.apple.dock autohide -bool true;ok
+
+running "Make Dock icons of hidden applications translucent"
+defaults write com.apple.dock showhidden -bool true;ok
+
+running "Make Dock more transparent"
+defaults write com.apple.dock hide-mirror -bool true;ok
+
+running "Reset Launchpad, but keep the desktop wallpaper intact"
+find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -delete;ok
+
+bot "Configuring Hot Corners"
+# Possible values:
+#  0: no-op
+#  2: Mission Control
+#  3: Show application windows
+#  4: Desktop
+#  5: Start screen saver
+#  6: Disable screen saver
+#  7: Dashboard
+# 10: Put display to sleep
+# 11: Launchpad
+# 12: Notification Center
+
+running "Top left screen corner → Mission Control"
+defaults write com.apple.dock wvous-tl-corner -int 2
+defaults write com.apple.dock wvous-tl-modifier -int 0;ok
+
+running "Top right screen corner → Desktop"
+defaults write com.apple.dock wvous-tr-corner -int 4
+defaults write com.apple.dock wvous-tr-modifier -int 0;ok
+
+running "Bottom right screen corner → Start screen saver"
+defaults write com.apple.dock wvous-br-corner -int 5
+defaults write com.apple.dock wvous-br-modifier -int 0;ok
+
+############################################
+bot "Mail Configuration"
+############################################
+
+running "Disable send and reply animations in Mail.app"
+defaults write com.apple.mail DisableReplyAnimations -bool true
+defaults write com.apple.mail DisableSendAnimations -bool true;ok
+
+running "Copy email addresses as 'foo@example.com' instead of 'Foo Bar <foo@example.com>' in Mail.app"
+defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false;ok
+
+# running "Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app"
+# defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" -string "@\\U21a9";ok
+
+running "Display emails in threaded mode, sorted by date (oldest at the top)"
+defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreadedMode" -string "yes"
+defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortedDescending" -string "yes"
+defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortOrder" -string "received-date";ok
+
+running "Disable inline attachments (just show the icons)"
+defaults write com.apple.mail DisableInlineAttachmentViewing -bool true;ok
+
+running "Disable automatic spell checking"
+defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnabled";ok
+
+############################################
+bot "Spotlight"
+############################################
+
+# running "Hide Spotlight tray-icon (and subsequent helper)"
+# sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search;ok
+
+running "Disable Spotlight indexing for any volume that gets mounted and has not yet been indexed"
+# Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
+sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes";ok
+
+running "Change indexing order and disable some file types from being indexed"
+defaults write com.apple.spotlight orderedItems -array \
+  '{"enabled" = 1;"name" = "APPLICATIONS";}' \
+  '{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
+  '{"enabled" = 1;"name" = "DIRECTORIES";}' \
+  '{"enabled" = 1;"name" = "PDF";}' \
+  '{"enabled" = 1;"name" = "FONTS";}' \
+  '{"enabled" = 0;"name" = "DOCUMENTS";}' \
+  '{"enabled" = 0;"name" = "MESSAGES";}' \
+  '{"enabled" = 0;"name" = "CONTACT";}' \
+  '{"enabled" = 0;"name" = "EVENT_TODO";}' \
+  '{"enabled" = 0;"name" = "IMAGES";}' \
+  '{"enabled" = 0;"name" = "BOOKMARKS";}' \
+  '{"enabled" = 0;"name" = "MUSIC";}' \
+  '{"enabled" = 0;"name" = "MOVIES";}' \
+  '{"enabled" = 0;"name" = "PRESENTATIONS";}' \
+  '{"enabled" = 0;"name" = "SPREADSHEETS";}' \
+  '{"enabled" = 0;"name" = "SOURCE";}';ok
+
+running "Load new settings before rebuilding the index"
+killall mds > /dev/null 2>&1;ok
+
+running "Make sure indexing is enabled for the main volume"
+sudo mdutil -i on / > /dev/null;ok
+
+# running "Rebuild the index from scratch"
+# sudo mdutil -E / > /dev/null;ok
+
+############################################
+bot "Terminal & iTerm2"
+############################################
+
+# running "Only use UTF-8 in Terminal.app"
+# defaults write com.apple.terminal StringEncodings -array 4;ok
+#
+# running "Use a modified version of the Solarized Dark theme by default in Terminal.app"
+# TERM_PROFILE='Solarized Dark xterm-256color';
+# CURRENT_PROFILE="$(defaults read com.apple.terminal 'Default Window Settings')";
+# if [ "${CURRENT_PROFILE}" != "${TERM_PROFILE}" ]; then
+#     open "./configs/${TERM_PROFILE}.terminal";
+#     sleep 1; # Wait a bit to make sure the theme is loaded
+#     defaults write com.apple.terminal 'Default Window Settings' -string "${TERM_PROFILE}";
+#     defaults write com.apple.terminal 'Startup Window Settings' -string "${TERM_PROFILE}";
+# fi;
+
+running "Enable “focus follows mouse” for Terminal.app" # and all X11 apps"
+# i.e. hover over a window and start `typing in it without clicking first
+defaults write com.apple.terminal FocusFollowsMouse -bool true
+# defaults write org.x.X11 wm_ffm -bool true;ok
+
+running "Installing the custom theme for iTerm (opening file)"
+open "./configs/afterglow.itermcolors";ok
+
+# running "Don’t display the annoying prompt when quitting iTerm"
+# defaults write com.googlecode.iterm2 PromptOnQuit -bool false;ok
+
+running "hide tab title bars"
+defaults write com.googlecode.iterm2 HideTab -bool true;ok
+
+# running "set system-wide hotkey to show/hide iterm with ^\`"
+# defaults write com.googlecode.iterm2 Hotkey -bool true;ok
+
+running "hide pane titles in split panes"
+defaults write com.googlecode.iterm2 ShowPaneTitles -bool false;ok
+
+running "animate split-terminal dimming"
+defaults write com.googlecode.iterm2 AnimateDimming -bool true;ok
+defaults write com.googlecode.iterm2 HotkeyChar -int 96;
+defaults write com.googlecode.iterm2 HotkeyCode -int 50;
+defaults write com.googlecode.iterm2 FocusFollowsMouse -int 1;
+defaults write com.googlecode.iterm2 HotkeyModifiers -int 262401;
+
+running "Make iTerm2 load new tabs in the same directory"
+/usr/libexec/PlistBuddy -c "set \"New Bookmarks\":0:\"Custom Directory\" Recycle" ~/Library/Preferences/com.googlecode.iterm2.plist
+
+# running "setting fonts"
+# defaults write com.googlecode.iterm2 "Normal Font" -string "Hack-Regular 12";
+# defaults write com.googlecode.iterm2 "Non Ascii Font" -string "RobotoMonoForPowerline-Regular 12";
+# ok
+running "reading iterm settings"
+defaults read -app iTerm > /dev/null 2>&1;
+ok
+
 
 }
 
