@@ -87,6 +87,7 @@ brew cask install \
     telegram \
     private-internet-access \
     qbittorrent \
+    vnc-viewer \
     youtube-to-mp3
 
 # Optional #
