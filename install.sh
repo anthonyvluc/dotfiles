@@ -89,7 +89,8 @@ fi
 #############################################
 # System Settings                           #
 #############################################
-# ./macos.sh
+# source ./macos.sh
+# macos
 
 #############################################
 # Terminal Settings                         #
@@ -101,5 +102,3 @@ fi
 
 
 bot "Installation successfully completed!"
-
-
