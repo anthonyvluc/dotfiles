@@ -1,10 +1,19 @@
 #!/usr/bin/env bash
 # TODO: figure out how to include this
 
+# Taps
+# TODO: figure out taps and usage
+tap 'caskroom/cask'
+tap 'caskroom/eid'
+tap 'caskroom/fonts'
+tap 'caskroom/versions'
+tap 'homebrew/bundle'
+
 # Essentials
 brew install \
     bash \
     cmake \
+    coreutils \
     curl \
     dos2unix \
     fzf \
@@ -92,4 +101,14 @@ brew cask install \
     vagrant \
     wireshark \
     xquartz
+
+# TODO: Fonts
+# Fonts
+cask 'font-lato'
+cask 'font-open-sans'
+cask 'font-roboto'
+cask 'font-source-code-pro-for-powerline'
+cask 'font-source-code-pro'
+cask 'font-source-sans-pro'
+cask 'font-source-serif-pro'
 
