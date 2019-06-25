@@ -38,6 +38,7 @@ brew install \
     gnupg \
     go \
     google-chrome \
+    mas \
     netcat \
     nmap \
     node \
@@ -130,3 +131,7 @@ cask 'font-source-serif-pro'
 
 # Remove outdated versions from the cellar.
 brew cleanup
+
+# Mac App Store
+mas install 1278508951 # Trello
+mas install 1176895641 # Spark
