@@ -25,10 +25,9 @@ if [[ `uname` == 'Darwin' ]]; then
 
     # Install XCode
     bot "Ensuring build/install tools are available"
-    # TODO: check this
-    #xcode-select --install 2>&1 > /dev/null
-    #sudo xcode-select -s /Applications/Xcode.app/Contents/Developer 2>&1 > /dev/null
-    #sudo xcodebuild -license accept 2>&1 > /dev/null
+    xcode-select --install 2>&1 > /dev/null
+    sudo xcode-select -s /Applications/Xcode.app/Contents/Developer 2>&1 > /dev/null
+    sudo xcodebuild -license accept 2>&1 > /dev/null
 
     # Check for Homebrew, and install if we don't have it.
     running "Checking Homebrew..."
@@ -58,13 +57,11 @@ if [[ `uname` == 'Darwin' ]]; then
 
     # Install Homebrew packages.
 
-
 else
     # Linux
     ok "System == Linux"
 
     # TODO: Handle various Linux flavors.
-
 fi
 
 bot "Setting Default Shell"
