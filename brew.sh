@@ -114,6 +114,7 @@ brew cask install \
     github \
     minikube \
     obs \
+    parallels \
     postman \
     signal \
     vagrant \
@@ -121,7 +122,7 @@ brew cask install \
     xquartz
 
 # TODO: Fonts
-# Fonts
+# Fonts #
 cask 'font-lato'
 cask 'font-open-sans'
 cask 'font-roboto'
@@ -133,6 +134,7 @@ cask 'font-source-serif-pro'
 # Remove outdated versions from the cellar.
 brew cleanup
 
-# Mac App Store
+# Mac App Store #
+# Be sure to have mas installed
 mas install 1278508951 # Trello
 mas install 1176895641 # Spark
