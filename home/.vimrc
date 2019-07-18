@@ -88,6 +88,8 @@ filetype plugin indent on " Load filetype plugin and indent settings
 """"""""""""""""""""""""
 set history=1000        " How many lines of history to remember
 set undolevels=1000     " Number of undo levels
+set undofile            " Maintain edit history between sessions
+set udir=~/.vim/undodir " Specify directory for undo files
 
 """"""""""""""""""""""""
 "
