@@ -38,9 +38,9 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim UI
-""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set relativenumber      " Show line numbers
 set linebreak           " Break lines at word (requires Wrap lines)
 set textwidth=100       " Line wrap (number of cols)
@@ -58,9 +58,9 @@ set scrolloff=5         " Keep 5 lines for (top/bottom) scope
 "set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 set laststatus=2        " Always show the status line
 
-""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
-""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set showmatch           " Show matching brackets
 set mat=5               " How many tenths of a second to blink matching brackets for
 set nohlsearch          " Don't highlight all search results
@@ -68,9 +68,9 @@ set incsearch           " Searches for strings incrementally
 set smartcase           " Enable smart-case search
 set ignorecase          " Always case-insensitive
 
-""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Whitespace
-""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set autoindent          " Auto-indent new lines
 set softtabstop=4       " Number of spaces per Tab
 set shiftwidth=4        " Number of auto-indent spaces
@@ -83,17 +83,29 @@ set preserveindent      "
 set cindent             " C-Style indenting
 filetype plugin indent on " Load filetype plugin and indent settings
 
-""""""""""""""""""""""""
-"
-""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set history=1000        " How many lines of history to remember
+set swapfile
+set directory^=~/.vim/swap// " Protect changes between writes
+set writebackup         " Protect against crask-during-write
+set nobackup            " But do not persist backup after successful write
+set backupcopy=auto     " Use rename-and-write-new method whenever safe
+
+" Patch required to honor double slash at end
+if has("patch-8.1.0251")
+    " Consolidate the writebackups
+    set backupdir^=~/.vim/backup//
+end
+
 set undolevels=1000     " Number of undo levels
 set undofile            " Maintain edit history between sessions
-set udir=~/.vim/undodir " Specify directory for undo files
+set undodir^=~/.vim/undo// " Specify directory for undo files
 
-""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
-""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set backspace=indent,eol,start  " Backspace behaviour
 
 filetype plugin on

@@ -2,4 +2,5 @@ List of Resources/Inspiration Used
 * https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789
 * [Heavy inspiration from] https://github.com/atomantic/dotfiles
 * https://github.com/mathiasbynens/dotfiles
+* https://begriffs.com/posts/2019-07-19-history-use-vim.html
 
