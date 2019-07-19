@@ -62,6 +62,7 @@ brew cask install \
     iterm2 \
     keepassxc \
     google-backup-and-sync \
+    google-drive-file-stream \
     qlcolorcode \
     qlstephen \
     qlmarkdown \
@@ -81,9 +82,14 @@ brew install \
     youtube-dl
 
 brew cask install \
+    adobe-creative-cloud \
+    adobe-acrobat-reader \
+    aerial \
     calibre \
+    dash \
     discord \
     gimp \
+    messenger \
     minecraft \
     steam \
     telegram \
@@ -97,6 +103,7 @@ brew install \
     angular-cli \
     awscli \
     dropbox \
+    grip \
     heroku \
     hugo \
     packer \
@@ -107,19 +114,28 @@ brew install \
 
 brew cask install \
     aerial \
+    epubquicklook \
     darktable \
     docker \
     fastlane \
     firefox \
     github \
+    keybase \
+    kitematic \
+    massreplaceit \
     minikube \
+    nightowl \
     obs \
+    oracle-jdk \
     parallels \
+    pennywise \
     postman \
     signal \
+    spotspot \
     vagrant \
     wireshark \
-    xquartz
+    xquartz \
+    yakyak
 
 # TODO: Fonts
 # Fonts #
