@@ -56,7 +56,9 @@ if [[ `uname` == 'Darwin' ]]; then
     fi
 
     # Install Homebrew packages.
-    bot "TODO: update brew.sh and add to script"
+    action "Install Brew Packages..."
+    # source ./brew.sh
+    # brew
 
 else
     # Linux
@@ -76,21 +78,46 @@ fi
 bot "Dotfiles Setup"
 ask "symlink ./home/* files in ~/ (these are the dotfiles)?"
 if [[ $? == 0 ]]; then
-    bot "Creating symlinks for project files..."
+    action "Creating symlinks for project files..."
     pushd home > /dev/null 2>&1 # Push home/ to directory stack
+    now=$(date +"%Y.%m.%d.%H.%M.%S")
 
-    # TODO: 
     for file in .*; do
-        echo $file
+        if [[ $file == "." || $file == ".." ]]; then
+            continue
+        fi
+        running "~/$file"
+        # if the file exists:
+        if [[ -e ~/$file ]]; then
+            mkdir -p ~/.dotfiles_backup/$now
+            mv ~/$file ~/.dotfiles_backup/$now/$file
+            echo "backup saved as ~/.dotfiles_backup/$now/$file"
+        fi
+        # symlink might still exist
+        unlink ~/$file > /dev/null 2>&1
+        # create the link
+        ln -s ~/.dotfiles/home/$file ~/$file
+        echo -en '\tlinked';ok
     done
 
     popd > /dev/null 2>&1 # Pop from directory stack
 fi
 
+bot "VIM Setup"
+ask "Do you want to install vim plugins now? [y|N] "
+if [[ $? == 0 ]]; then
+  bot "Installing vim plugins"
+  vim +PlugInstall > /dev/null 2>&1
+  ok
+else
+  ok "skipped. Install by running :PluginInstall within vim"
+fi
+
 #############################################
 # System Settings                           #
 #############################################
-# source ./macos.sh
-# macos
+bot "System Settings"
+source ./macos.sh
+macos
 
 bot "Installation successfully completed!"
