@@ -17,6 +17,13 @@ call plug#begin('~/.vim/plugged')
 
 " Plugins
 Plug 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'airblade/vim-gitgutter'
+Plug 'godlygeek/tabular'
 
 " Initialize plugin system
 call plug#end()
@@ -35,10 +42,9 @@ set ruler               " Show row and column ruler information
 set list                " Ensure we  show tabs
 set listchars=tab:>-,trail:- " Show tabs and trailing whitespace
 set nowrap              " Do not wrap line
-set tw=80               " Text 
-"set cmdheight=2         " Command window height
+set tw=80               " Text width
+set cmdheight=1         " Command window height
 set scrolloff=5         " Keep 5 lines for (top/bottom) scope
-"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 set laststatus=2        " Always show the status line
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
