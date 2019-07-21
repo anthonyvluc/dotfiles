@@ -56,6 +56,7 @@ if [[ `uname` == 'Darwin' ]]; then
     fi
 
     # Install Homebrew packages.
+    bot "TODO: update brew.sh and add to script"
 
 else
     # Linux

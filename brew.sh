@@ -23,6 +23,8 @@ brew install grep
 brew install openssh
 brew install gmp
 
+brew tap caskroom/cask
+
 # Essentials #
 brew install \
     bash \
@@ -139,13 +141,14 @@ brew cask install \
 
 # TODO: Fonts
 # Fonts #
-cask 'font-lato'
-cask 'font-open-sans'
-cask 'font-roboto'
-cask 'font-source-code-pro-for-powerline'
-cask 'font-source-code-pro'
-cask 'font-source-sans-pro'
-cask 'font-source-serif-pro'
+# cask 'font-lato'
+# cask 'font-open-sans'
+# cask 'font-roboto'
+# cask 'font-roboto-mono'
+# cask 'font-source-code-pro-for-powerline'
+# cask 'font-source-code-pro'
+# cask 'font-source-sans-pro'
+# cask 'font-source-serif-pro'
 
 # Remove outdated versions from the cellar.
 brew cleanup
