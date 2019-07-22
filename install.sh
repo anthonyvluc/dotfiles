@@ -110,7 +110,7 @@ if [[ $? == 0 ]]; then
   vim +PlugInstall > /dev/null 2>&1
   ok
 else
-  ok "skipped. Install by running :PluginInstall within vim"
+  ok "skipped. Install by running :PlugInstall within vim"
 fi
 
 #############################################
