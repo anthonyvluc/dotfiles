@@ -155,6 +155,5 @@ brew cleanup
 
 # Mac App Store #
 # Be sure to have mas installed
-mas install 497799835 # Xcode
 mas install 1278508951 # Trello
 mas install 1176895641 # Spark
