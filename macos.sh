@@ -75,6 +75,9 @@ macos() {
     # running "Disable Notification Center and remove the menu bar icon"
     # launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist > /dev/null 2>&1; ok
 
+    # running "Change Notification Center banner popup time to 1 second"
+    # defaults write com.apple.notificationcenterui bannerTime 1; ok
+
     running "Disable smart quotes as they’re annoying when typing code"
     defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false; ok
 
