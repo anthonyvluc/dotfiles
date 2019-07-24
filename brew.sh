@@ -39,7 +39,6 @@ brew install \
     glib \
     gnupg \
     go \
-    google-chrome \
     mas \
     netcat \
     nmap \
@@ -64,6 +63,7 @@ brew cask install \
     iterm2 \
     keepassxc \
     google-backup-and-sync \
+    google-chrome \
     google-drive-file-stream \
     qlcolorcode \
     qlstephen \
