@@ -85,6 +85,16 @@ macos() {
     defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false; ok
 
     ############################################
+    bot "Menubar Configuration"
+    ############################################
+
+    #running "TODO: Show Bluetooth in menu bar"
+    #defaults write com.apple.systemuiserver menuExtras
+
+    running "Showing battery percentage in menu bar"
+    defaults write com.apple.menuextra.battery ShowPercent YES
+
+    ############################################
     bot "Trackpad, Mouse, Keyboard, Bluetooth Accessories, and Input"
     ############################################
 
