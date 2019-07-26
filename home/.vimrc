@@ -17,13 +17,13 @@ call plug#begin('~/.vim/plugged')
 
 " Plugins
 Plug 'jiangmiao/auto-pairs'
-Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
+Plug 'nathanaelkane/vim-indent-guides'
 
 " Initialize plugin system
 call plug#end()
