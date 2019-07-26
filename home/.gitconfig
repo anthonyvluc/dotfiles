@@ -1,9 +1,6 @@
 [user]
-    name = GITHUBFULLNAME
-    email = GITHUBEMAIL
-
-[github]
-    user = GITHUBUSER
+    name = Anthony Luc
+    email = aluc@nd.edu
 
 [core]
     excludesfile = ~/.gitignore
