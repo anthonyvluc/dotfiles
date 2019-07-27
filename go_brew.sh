@@ -95,6 +95,7 @@ go_brew () {
         gimp \
         messenger \
         minecraft \
+        runelite \
         steam \
         telegram \
         private-internet-access \
