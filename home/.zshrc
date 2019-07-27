@@ -113,14 +113,23 @@ export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 
+# Packer
 export PATH="$PATH:/usr/local/packer"
 
 # Go
 export GOROOT="/usr/local/go"
 
+# NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # GNU Tools
-PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
+# Python
+alias python="/usr/local/bin/python3"
+alias pip="/usr/local/bin/pip3"
+
+# Ruby
+export PATH="/usr/local/opt/ruby/bin:$PATH
