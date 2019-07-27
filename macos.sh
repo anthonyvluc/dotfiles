@@ -284,8 +284,12 @@ macos() {
     running "Don’t automatically rearrange Spaces based on most recent use"
     defaults write com.apple.dock mru-spaces -bool false; ok
 
+    running "Don't show recent applications separately"
+    defaults write com.apple.dock show-recents -bool false; ok
+
     running "Remove the auto-hiding Dock delay"
     defaults write com.apple.dock autohide-delay -float 0; ok
+
     running "Remove the animation when hiding/showing the Dock"
     defaults write com.apple.dock autohide-time-modifier -float 0; ok
 
