@@ -37,14 +37,14 @@ if [[ $? = 0 ]]; then
     fi
     email=`dscl . -read /Users/$(whoami) | grep EMailAddress | sed "s/EMailAddress: //"`
 
-    if [[ ! "first_name" ]]; then
-        found_name='f'
+    if [[ ! $first_name ]]; then
+        response='n'
     else
         echo -e "I see that your full name is $COL_YELLOW$first_name $last_name$COL_RESET"
+        read -r -p "Is this correct? [y|N] " response
     fi
 
-    ask "Is this correct?"
-    if [ $found_name == 'f' ] || [ $? == 1 ]; then
+    if [[ $response =~ (no|n|N) ]]; then
         read -r -p "What is your first name? " first_name
         read -r -p "What is your last name? " last_name
     fi
@@ -53,13 +53,13 @@ if [[ $? = 0 ]]; then
 
     bot "Great $full_name, "
     if [[ ! $email  ]]; then
-        found_email='f'
+        response='n'
     else
         echo -e "The best I can make out for your email address is $COL_YELLOW$email$COL_RESET"
+        read -r -p "Is this correct? [y|N] " response
     fi
 
-    ask "Is this correct?"
-    if [ $found_email == 'f' ] || [ $? == 1 ]; then
+    if [[ $response =~ (no|n|N) ]]; then
         read -r -p "What is your email? " email
         if [[ ! $email ]]; then
             error "You must provide an email to configure .gitconfig"
