@@ -184,7 +184,7 @@ if [[ $? == 0 ]]; then
 fi
 
 bot "VIM Setup"
-ask "Do you want to install vim plugins now? [y|N] "
+ask "Do you want to install vim plugins now?"
 if [[ $? == 0 ]]; then
   bot "Installing vim plugins"
   vim +PlugInstall +qall > /dev/null 2>&1
