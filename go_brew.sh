@@ -78,7 +78,6 @@ go_brew () {
         spectacle \
         spotify \
         sublime-text \
-        virtualbox \
         visual-studio-code \
         vlc
 
@@ -119,28 +118,15 @@ go_brew () {
     brew cask install \
         aerial \
         epubquicklook \
-        darktable \
         docker \
         dropbox \
         fastlane \
         firefox \
-        github \
-        keybase \
-        kitematic \
         massreplaceit \
         minikube \
-        nightowl \
-        obs \
-        oracle-jdk \
         parallels \
-        pennywise \
-        postman \
         signal \
-        spotspot \
-        vagrant \
-        wireshark \
-        xquartz \
-        yakyak
+        spotspot
 
     # TODO: Fonts
     # Fonts #

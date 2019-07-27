@@ -147,6 +147,7 @@ else
 
 fi
 
+# TODO: ensure zsh installed if not installed from go_brew
 bot "Setting Default Shell"
 CURRENTSHELL=$(dscl . -read /Users/$USER UserShell | awk '{print $2}')
 if [[ "$CURRENTSHELL" != "/usr/local/bin/zsh" ]]; then
