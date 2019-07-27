@@ -187,7 +187,7 @@ bot "VIM Setup"
 ask "Do you want to install vim plugins now? [y|N] "
 if [[ $? == 0 ]]; then
   bot "Installing vim plugins"
-  vim +PlugInstall > /dev/null 2>&1
+  vim +PlugInstall +qall > /dev/null 2>&1
   ok
 else
   ok "skipped. Install by running :PlugInstall within vim"
