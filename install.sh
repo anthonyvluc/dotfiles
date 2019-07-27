@@ -14,11 +14,84 @@ if [ $? -ne 0 ]; then
 fi
 
 #############################################
+# Git Configuration                         #
+#############################################
+
+bot "Let's update your information in .gitconfig"
+grep 'user = GITHUBUSER' ./home/.gitconfig > /dev/null 2>&1
+if [[ $? = 0 ]]; then
+    read -r -p "What is your GitHub username? " github_username
+
+    full_name=`osascript -e "long user name of (system info)"`
+
+    if [[ -n "$full_name" ]]; then
+        first_name=$(echo $full_name | awk '{print $1}');
+        last_name=$(echo $full_name | awk '{print $2}');
+    fi
+
+    if [[ -z $first_name ]]; then
+        first_name=`dscl . -read /Users/$(whoami) | grep FirstName | sed "s/FirstName: //"`
+    fi
+    if [[ -z $last_name ]]; then
+        last_name=`dscl . -read /Users/$(whoami) | grep LastName | sed "s/LastName: //"`
+    fi
+    email=`dscl . -read /Users/$(whoami) | grep EMailAddress | sed "s/EMailAddress: //"`
+
+    if [[ ! "first_name" ]]; then
+        found_name='f'
+    else
+        echo -e "I see that your full name is $COL_YELLOW$first_name $last_name$COL_RESET"
+    fi
+
+    ask "Is this correct?"
+    if [ $found_name == 'f' ] || [ $? == 1 ]; then
+        read -r -p "What is your first name? " first_name
+        read -r -p "What is your last name? " last_name
+    fi
+
+    full_name="$first_name $last_name"
+
+    bot "Great $full_name, "
+    if [[ ! $email  ]]; then
+        found_email='f'
+    else
+        echo -e "The best I can make out for your email address is $COL_YELLOW$email$COL_RESET"
+    fi
+
+    ask "Is this correct?"
+    if [ $found_email == 'f' ] || [ $? == 1 ]; then
+        read -r -p "What is your email? " email
+        if [[ ! $email ]]; then
+            error "You must provide an email to configure .gitconfig"
+            exit 1
+        fi
+    fi
+
+    running "Updating .gitconfig with your info ($COL_YELLOW$full_name, $email, $github_username$COL_RESET)"
+
+    # Test if gnu-sed or MacOS sed
+    sed -i "s/GITHUBFULLNAME/$full_name/" ./home/.gitconfig > /dev/null 2>&1 | true
+    if [[ ${PIPESTATUS[0]} != 0 ]]; then
+        echo
+        running "looks like you are using MacOS sed rather than gnu-sed, accommodating"
+        sed -i '' "s/GITHUBFULLNAME/$full_name/" ./home/.gitconfig
+        sed -i '' 's/GITHUBEMAIL/'$email'/' ./home/.gitconfig
+        sed -i '' 's/GITHUBUSER/'$github_username'/' ./home/.gitconfig
+        ok
+    else
+        echo
+        bot "looks like you are already using gnu-sed. woot!"
+        sed -i 's/GITHUBEMAIL/'$email'/' ./home/.gitconfig
+        sed -i 's/GITHUBUSER/'$github_username'/' ./home/.gitconfig
+    fi
+fi
+
+#############################################
 # Install Packages and Programs             #
 #############################################
 
 # Determine operating system and package manager.
-bot "Analyzing system..."
+bot "Analyzing your system to install packages"
 if [[ `uname` == 'Darwin' ]]; then
     # MacOS
     ok "System == Darwin"
@@ -30,7 +103,7 @@ if [[ `uname` == 'Darwin' ]]; then
     sudo xcodebuild -license accept 2>&1 > /dev/null
 
     # Check for Homebrew, and install if we don't have it.
-    running "Checking Homebrew..."
+    running "Checking Homebrew"
     brew_bin=$(which brew) 2>&1 > /dev/null
     if [[ $? != 0 ]]; then
         action "Installing Homebrew"
@@ -56,7 +129,7 @@ if [[ `uname` == 'Darwin' ]]; then
     fi
 
     # Install Homebrew packages.
-    action "Install Brew Packages..."
+    action "Install Brew Packages"
     # source ./brew.sh
     # brew
 
@@ -78,10 +151,14 @@ if [[ "$CURRENTSHELL" != "/usr/local/bin/zsh" ]]; then
   ok
 fi
 
+#############################################
+# Dotfiles Setup                            #
+#############################################
+
 bot "Dotfiles Setup"
 ask "symlink ./home/* files in ~/ (these are the dotfiles)?"
 if [[ $? == 0 ]]; then
-    action "Creating symlinks for project files..."
+    action "Creating symlinks for project files"
     pushd home > /dev/null 2>&1 # Push home/ to directory stack
     now=$(date +"%Y.%m.%d.%H.%M.%S")
 
