@@ -67,6 +67,7 @@ go_brew () {
         google-backup-and-sync \
         google-chrome \
         google-drive-file-stream \
+        malwarebytes \
         qlcolorcode \
         qlstephen \
         qlmarkdown \
