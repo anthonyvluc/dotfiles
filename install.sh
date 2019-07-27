@@ -130,8 +130,8 @@ if [[ `uname` == 'Darwin' ]]; then
 
     # Install Homebrew packages.
     action "Install Brew Packages"
-    # source ./brew.sh
-    # brew
+    source ./brew.sh
+    brew
 
 else
     # Linux
