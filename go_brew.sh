@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # TODO: figure out how to include this
 
-brew () {
+go_brew () {
 
     # Initial #
 
@@ -77,7 +77,6 @@ brew () {
         spectacle \
         spotify \
         sublime-text \
-        virtualbox \
         visual-studio-code \
         vlc
 
@@ -106,7 +105,6 @@ brew () {
     brew install \
         angular-cli \
         awscli \
-        dropbox \
         grip \
         heroku \
         hugo \
@@ -119,27 +117,14 @@ brew () {
     brew cask install \
         aerial \
         epubquicklook \
-        darktable \
         docker \
-        fastlane \
+        dropbox \
         firefox \
-        github \
-        keybase \
-        kitematic \
         massreplaceit \
         minikube \
-        nightowl \
-        obs \
-        oracle-jdk \
         parallels \
-        pennywise \
-        postman \
         signal \
-        spotspot \
-        vagrant \
-        wireshark \
-        xquartz \
-        yakyak
+        spotspot
 
     # TODO: Fonts
     # Fonts #
@@ -164,7 +149,7 @@ brew () {
 
 INSTANCE="$(basename $0)"
 echo $INSTANCE
-if [[ "$INSTANCE" == "brew.sh" ]]; then
+if [[ "$INSTANCE" == "go_brew.sh" ]]; then
 
     # Ask for the administrator password upfront.
     sudo -v
@@ -176,5 +161,5 @@ if [[ "$INSTANCE" == "brew.sh" ]]; then
     source ./lib/echos.sh
 
     # Install brew packages.
-    brew
+    go_brew
 fi
