@@ -129,9 +129,13 @@ if [[ `uname` == 'Darwin' ]]; then
     fi
 
     # Install Homebrew packages.
-    action "Install Brew Packages"
-    source ./brew.sh
-    brew
+    ask "Install Homebrew packages?"
+    if [[ $? == 0 ]]; then
+        action "Install Brew Packages"
+        source ./go_brew.sh
+        go_brew
+        ok "brew packages installed"
+    fi
 
 else
     # Linux

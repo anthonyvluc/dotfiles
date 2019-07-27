@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # TODO: figure out how to include this
 
-brew () {
+go_brew () {
 
     # Initial #
 
@@ -106,7 +106,6 @@ brew () {
     brew install \
         angular-cli \
         awscli \
-        dropbox \
         grip \
         heroku \
         hugo \
@@ -121,6 +120,7 @@ brew () {
         epubquicklook \
         darktable \
         docker \
+        dropbox \
         fastlane \
         firefox \
         github \
@@ -164,7 +164,7 @@ brew () {
 
 INSTANCE="$(basename $0)"
 echo $INSTANCE
-if [[ "$INSTANCE" == "brew.sh" ]]; then
+if [[ "$INSTANCE" == "go_brew.sh" ]]; then
 
     # Ask for the administrator password upfront.
     sudo -v
@@ -176,5 +176,5 @@ if [[ "$INSTANCE" == "brew.sh" ]]; then
     source ./lib/echos.sh
 
     # Install brew packages.
-    brew
+    go_brew
 fi
