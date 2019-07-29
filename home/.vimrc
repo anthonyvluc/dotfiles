@@ -33,7 +33,6 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set relativenumber      " Show line numbers
 set linebreak           " Break lines at word (requires Wrap lines)
-set textwidth=100       " Line wrap (number of cols)
 set showmatch           " Highlight matching brace
 set novisualbell        " Dont' use visual bell
 set noerrorbells        " Don't beep
@@ -42,7 +41,7 @@ set ruler               " Show row and column ruler information
 set list                " Ensure we  show tabs
 set listchars=tab:>-,trail:- " Show tabs and trailing whitespace
 set nowrap              " Do not wrap line
-set tw=80               " Text width
+set tw=120              " Text width
 set cmdheight=1         " Command window height
 set scrolloff=5         " Keep 5 lines for (top/bottom) scope
 set laststatus=2        " Always show the status line
@@ -71,6 +70,9 @@ set copyindent          "
 set preserveindent      " 
 set cindent             " C-Style indenting
 filetype plugin indent on " Load filetype plugin and indent settings
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 
