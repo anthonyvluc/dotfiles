@@ -110,6 +110,7 @@ go_brew () {
         grip \
         heroku \
         hugo \
+        neofetch \
         packer \
         perl \
         telnet \
