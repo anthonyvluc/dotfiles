@@ -107,4 +107,5 @@ source $ZSH/oh-my-zsh.sh
 alias python=/usr/local/bin/python3
 alias pip=/usr/local/bin/pip3
 
+# Link my search script
 alias search=~/search
