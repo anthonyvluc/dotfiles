@@ -109,3 +109,5 @@ alias pip=/usr/local/bin/pip3
 
 # Link my search script
 alias search=~/search
+
+snow() { open "https://nd.service-now.com/text_search_exact_match.do?sysparm_search=$1" }
