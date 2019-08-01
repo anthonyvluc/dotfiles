@@ -110,6 +110,7 @@ go_brew () {
         grip \
         heroku \
         hugo \
+        neofetch \
         packer \
         perl \
         telnet \
@@ -144,14 +145,15 @@ go_brew () {
 
     # TODO: Fonts
     # Fonts #
-    # cask 'font-lato'
-    # cask 'font-open-sans'
-    # cask 'font-roboto'
-    # cask 'font-roboto-mono'
-    # cask 'font-source-code-pro-for-powerline'
-    # cask 'font-source-code-pro'
-    # cask 'font-source-sans-pro'
-    # cask 'font-source-serif-pro'
+    brew tap homebrew/cask-fonts
+    brew cask install 'font-lato' \
+        'font-open-sans' \
+        'font-roboto' \
+        'font-roboto-mono' \
+        'font-source-code-pro-for-powerline'
+        'font-source-code-pro' \
+        'font-source-sans-pro' \
+        'font-source-serif-pro'
 
     # Remove outdated versions from the cellar.
     brew cleanup
