@@ -16,15 +16,21 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " Plugins
-Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'bling/vim-airline'
+<<<<<<< HEAD
+=======
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'townk/vim-autoclose'
+>>>>>>> 558c09f778bc0a09210fe5b54838e8f1ce0a2494
 
 " Initialize plugin system
 call plug#end()
