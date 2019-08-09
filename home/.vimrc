@@ -24,6 +24,7 @@ Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'bling/vim-airline'
 
 " Initialize plugin system
 call plug#end()
