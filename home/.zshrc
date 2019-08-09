@@ -104,6 +104,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+<<<<<<< HEAD
 alias python=/usr/local/bin/python3
 alias pip=/usr/local/bin/pip3
 
@@ -114,3 +115,25 @@ snow() { open "https://nd.service-now.com/text_search_exact_match.do?sysparm_sea
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+=======
+# Applications
+alias runelite="open -n /Applications/RuneLite.app" # RuneLite
+
+# OpenSSL
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
+
+export PATH="$PATH:/usr/local/packer"
+
+# Go
+export GOROOT="/usr/local/go"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# GNU Tools
+PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+>>>>>>> 83ff66096105e290ed7901a244c74099809944b3
