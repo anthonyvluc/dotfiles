@@ -111,3 +111,6 @@ alias pip=/usr/local/bin/pip3
 alias search=~/search
 
 snow() { open "https://nd.service-now.com/text_search_exact_match.do?sysparm_search=$1" }
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+

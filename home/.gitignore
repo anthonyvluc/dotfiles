@@ -2,6 +2,7 @@
 # Python #
 ##########
 *.pyc
+__pycache__/
 
 ########
 # Node #
