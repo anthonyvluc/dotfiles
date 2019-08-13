@@ -113,3 +113,10 @@ alias search=~/search
 snow() { open "https://nd.service-now.com/text_search_exact_match.do?sysparm_search=$1" }
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+cpdeploy() {
+    RFCNO=$1
+    URL=$2
+    echo -n "sudo do_autodeploy -rfc $RFCNO -db bnrtest -dev aluc -url $URL
+sudo do_autodeploy -rfc $RFCNO -db bnrprod -dev aluc -url $URL" | pbcopy
+}
