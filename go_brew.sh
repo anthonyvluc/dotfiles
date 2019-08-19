@@ -69,6 +69,7 @@ go_brew () {
         google-drive-file-stream \
         malwarebytes \
         microsoft-office \
+        pgadmin4 \
         qlcolorcode \
         qlstephen \
         qlmarkdown \
@@ -161,7 +162,7 @@ go_brew () {
 
     # Mac App Store #
     # Be sure to have mas installed
-    mas signin --dialog anthonyvanluc@gmail.com
+    # mas signin --dialog anthonyvanluc@gmail.com
     mas install 1278508951 # Trello
     mas install 1176895641 # Spark
 }
