@@ -121,10 +121,11 @@ go_brew () {
 
     brew cask install \
         aerial \
-        epubquicklook \
+        cyberduck \
         darktable \
         docker \
         dropbox \
+        epubquicklook \
         fastlane \
         firefox \
         github \
