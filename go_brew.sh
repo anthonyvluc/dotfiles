@@ -30,6 +30,7 @@ go_brew () {
     # Essentials #
     brew install \
         bash \
+        bat \
         cmake \
         coreutils \
         curl \
