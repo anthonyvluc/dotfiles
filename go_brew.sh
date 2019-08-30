@@ -19,6 +19,9 @@ go_brew () {
     # brew install bash
     # brew install bash-completion2
 
+    # TODO:
+    # brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt grep
+
     # Install more recent versions of some macOS tools.
     brew install vim
     brew install grep
