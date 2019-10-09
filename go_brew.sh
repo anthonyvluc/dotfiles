@@ -73,6 +73,7 @@ go_brew () {
         google-drive-file-stream \
         malwarebytes \
         microsoft-office \
+        owasp-zap \
         pgadmin4 \
         qlcolorcode \
         qlstephen \

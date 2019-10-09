@@ -1,1 +1,22 @@
+snow() {
+    for query in "$@"; do
+        open "https://nd.service-now.com/text_search_exact_match.do?sysparm_search=$query"
+    done
+}
 
+cpdeploy() {
+    RFCNO=$1
+    URL=$2
+    echo -n "sudo do_autodeploy -rfc $RFCNO -db bnrtest -dev aluc -url $URL
+sudo do_autodeploy -rfc $RFCNO -db bnrprod -dev aluc -url $URL" | pbcopy
+    pbpaste
+}
+
+winpath() {
+    echo "$1" | sed 's/\//\\/g' | pbcopy
+    pbpaste
+}
+
+rmtrailws() {
+    gsed -i 's/[[:space:]]*$//' $1
+}

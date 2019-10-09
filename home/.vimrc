@@ -26,7 +26,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'bling/vim-airline'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'townk/vim-autoclose'
 
 " Initialize plugin system
@@ -73,10 +73,10 @@ set expandtab           " Use spaces instead of tabs
 set copyindent          " 
 set preserveindent      " 
 set cindent             " C-Style indenting
-filetype plugin indent on " Load filetype plugin and indent settings
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_guide_size = 1
-let g:indent_guides_start_level = 2
+"filetype plugin indent on " Load filetype plugin and indent settings
+"let g:indent_guides_enable_on_vim_startup = 1
+"let g:indent_guides_guide_size = 1
+"let g:indent_guides_start_level = 2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 
