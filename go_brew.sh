@@ -51,6 +51,7 @@ go_brew () {
         node \
         openssl \
         php \
+        postgresql \
         python \
         p7zip \
         react-native-cli \
