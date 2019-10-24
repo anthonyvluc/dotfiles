@@ -45,6 +45,7 @@ go_brew () {
         glib \
         gnupg \
         go \
+        graphviz \
         mas \
         netcat \
         nmap \
