@@ -160,7 +160,7 @@ go_brew () {
         'font-open-sans' \
         'font-roboto' \
         'font-roboto-mono' \
-        'font-source-code-pro-for-powerline'
+        'font-source-code-pro-for-powerline' \
         'font-source-code-pro' \
         'font-source-sans-pro' \
         'font-source-serif-pro'
