@@ -32,26 +32,31 @@ Plug 'townk/vim-autoclose'
 " Initialize plugin system
 call plug#end()
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Behavior
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set mouse=a             " Use mouse everywhere
+set nowrap              " Do not wrap line
+" set tw=120              " Text width
+" set linebreak           " Break lines at word (requires Wrap lines)
+set whichwrap+=<,>,h,l,[,] " Wrap lines
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim UI
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set relativenumber      " Show line numbers
-set linebreak           " Break lines at word (requires Wrap lines)
 set showmatch           " Highlight matching brace
 set novisualbell        " Dont' use visual bell
 set noerrorbells        " Don't beep
-set mouse=a             " Use mouse everywhere
 set ruler               " Show row and column ruler information
 set list                " Ensure we  show tabs
 set listchars=tab:>-,trail:- " Show tabs and trailing whitespace
-set nowrap              " Do not wrap line
-set tw=120              " Text width
 set cmdheight=1         " Command window height
 set scrolloff=5         " Keep 5 lines for (top/bottom) scope
 set laststatus=2        " Always show the status line
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
+" Visuals
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set showmatch           " Show matching brackets
 set mat=5               " How many tenths of a second to blink matching brackets for
@@ -79,7 +84,7 @@ set cindent             " C-Style indenting
 "let g:indent_guides_start_level = 2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 
+" History and Backup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set history=1000        " How many lines of history to remember
 set swapfile
