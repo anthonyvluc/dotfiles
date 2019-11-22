@@ -124,3 +124,8 @@ export NVM_DIR="$HOME/.nvm"
 
 # GNU Tools
 PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
+# Brew Completions
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
