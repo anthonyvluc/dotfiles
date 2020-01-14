@@ -30,3 +30,14 @@ winpath() {
     echo "$1" | sed 's/\//\\/g' | pbcopy
     pbpaste
 }
+
+query_spriden() {
+    echo "select * from spriden where lower(spriden_first_name) like lower('%$1%') and lower(spriden_last_name) like lower('%$2%');" | pbcopy
+    pbpaste
+}
+
+f_get_pidm_from_ndid() {
+    for i in $(cat $1); do
+        echo "select ndgeadmin.general_common.f_get_pidm_from_ndid('$i') from dual;"
+    done
+}
