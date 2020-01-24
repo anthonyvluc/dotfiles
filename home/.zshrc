@@ -116,9 +116,6 @@ export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 # Packer
 export PATH="$PATH:/usr/local/packer"
 
-# Go
-export GOROOT="/usr/local/go"
-
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -126,6 +123,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # GNU Tools
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # Python
 alias python="/usr/local/bin/python3"
@@ -134,3 +132,8 @@ alias pip="/usr/local/bin/pip3"
 # Ruby
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
+
+# Brew Completions
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi

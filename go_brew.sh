@@ -41,7 +41,9 @@ go_brew () {
         glib \
         gnupg \
         go \
+        less \
         mas \
+        make\
         netcat \
         nmap \
         node \
@@ -68,6 +70,7 @@ go_brew () {
         google-chrome \
         google-drive-file-stream \
         malwarebytes \
+        microsoft-office \
         qlcolorcode \
         qlstephen \
         qlmarkdown \
