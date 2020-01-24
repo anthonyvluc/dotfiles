@@ -41,7 +41,9 @@ go_brew () {
         glib \
         gnupg \
         go \
+        less \
         mas \
+        make\
         netcat \
         nmap \
         node \

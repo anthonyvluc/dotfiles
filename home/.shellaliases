@@ -31,7 +31,7 @@ alias f='open -a Finder ./'                 # Opens current directory in MacOS F
 alias ~="cd ~"                              # Go Home
 alias c='clear'                             # Clear terminal display
 alias path='echo -e ${PATH//:/\\n}'         # Echo all executable Paths
-alias rl='source ~/.zshrc'                  # Reload shell configuration
+alias rl='source ~/.zshrc ~/.shell*'        # Reload shell configuration
 
 ############################################
 # MacOS Specific - todo

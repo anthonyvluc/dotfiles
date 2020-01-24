@@ -26,7 +26,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'bling/vim-airline'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'townk/vim-autoclose'
 
 " Initialize plugin system
