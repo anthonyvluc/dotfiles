@@ -67,6 +67,7 @@ go_brew () {
 
     brew cask install \
         alfred \
+        beyond-compare \
         clipy \
         iterm2 \
         keepassxc \
