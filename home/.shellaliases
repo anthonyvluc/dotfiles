@@ -8,12 +8,13 @@ alias g=git
 ############################################
 # Custom Implementations
 ############################################
-alias cp='cp -iv'                           # Preferred 'cp' implementation
-alias ls='ls -Gp'                           # Preferred ‘ls’ implementation
-alias grep='grep --color=auto'              # Preferred 'grep' implementation
-alias mv='mv -iv'                           # Preferred 'mv' implementation
+alias cp='gcp -iv'                          # Preferred 'cp' implementation
+alias ls='gls -Gp --color=always'           # Preferred ‘ls’ implementation
+alias grep='grep --color=always'            # Preferred 'grep' implementation
+alias rg='rg --color always'                # Preferred 'rg' implementation
+alias mv='gmv -iv'                          # Preferred 'mv' implementation
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
-alias ll='ls -FGlAhp'                       # Preferred 'ls' implementation
+alias ll='gls -FGlAhp'                      # Preferred 'ls' implementation
 cd() { builtin cd "$@"; ls; }               # Always print ls 'cd'
 mcd () { mkdir -p "$1" && cd "$1"; }        # Makes new Dir and jumps inside
 
@@ -31,7 +32,9 @@ alias f='open -a Finder ./'                 # Opens current directory in MacOS F
 alias ~="cd ~"                              # Go Home
 alias c='clear'                             # Clear terminal display
 alias path='echo -e ${PATH//:/\\n}'         # Echo all executable Paths
-alias rl='source ~/.zshrc ~/.shell*'        # Reload shell configuration
+alias rl='source ~/.zshrc; source ~/.shell*' # Reload shell configuration
+alias pbcp='pbcopy'
+alias pbp='pbpaste'
 
 ############################################
 # MacOS Specific - todo

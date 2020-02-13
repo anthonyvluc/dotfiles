@@ -38,6 +38,7 @@ go_brew () {
         gcc \
         gdb \
         git \
+        git-gui \
         glib \
         gnupg \
         go \
@@ -59,6 +60,7 @@ go_brew () {
         tmux \
         typescript \
         wget \
+        xsv \
         zsh
 
     brew cask install \
