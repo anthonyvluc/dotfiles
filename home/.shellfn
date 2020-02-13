@@ -7,7 +7,7 @@ sudo do_autodeploy -rfc $RFCNO -db bnrprod -dev aluc -url $URL" | pbcopy
 }
 
 findsvn() {
-    rg -i $1 ~/repos/svn
+    rg --color always -i $1 ~/repos/svn
 }
 
 rmtrailws() {
