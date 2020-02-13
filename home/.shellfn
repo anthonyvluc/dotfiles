@@ -37,7 +37,6 @@ query_spriden() {
 }
 
 f_get_pidm_from_ndid() {
-    for i in $(cat $1); do
-        echo "select ndgeadmin.general_common.f_get_pidm_from_ndid('$i') from dual;"
-    done
+    echo "select ndgeadmin.general_common.f_get_pidm_from_ndid('$1') from dual;" | pbcopy
+    pbpaste
 }

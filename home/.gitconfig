@@ -43,3 +43,17 @@
     s = status -s -u
     unstage = reset HEAD --
 
+[diff]
+    tool = bcomp
+[difftool]
+    prompt = false
+[difftool "bcomp"]
+    trustExitCode = true
+    cmd = "/usr/local/bin/bcomp" \"$LOCAL\" \"$REMOTE\"
+[merge]
+    tool = bcomp
+[mergetool]
+    prompt = false
+[mergetool "bcomp"]
+    trustExitCode = true
+    cmd = "/usr/local/bin/bcomp" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"

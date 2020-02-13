@@ -58,11 +58,13 @@ go_brew () {
         react-native-cli \
         readline \
         ripgrep \
+        rg \
         rsync \
         ruby \
         tmux \
         typescript \
         wget \
+        xsv \
         zsh
 
     brew cask install \
