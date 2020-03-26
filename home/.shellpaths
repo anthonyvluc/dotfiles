@@ -11,3 +11,8 @@ export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 export PATH="$PATH:$HOME/.rvm/bin"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# Oracle Client
+export DYLD_LIBRARY_PATH="/etc/oracle/instantclient"
+export TNS_ADMIN="$DYLD_LIBRARY_PATH/network/admin"
+export PATH="$PATH:$DYLD_LIBRARY_PATH"

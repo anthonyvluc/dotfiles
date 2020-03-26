@@ -112,3 +112,9 @@ HEROKU_AC_ZSH_SETUP_PATH=/Users/aluc/Library/Caches/heroku/autocomplete/zsh_setu
 # fix tmux?
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# Ruby
+export NLS_LANG=AMERICAN_AMERICA.WE8ISO8859P1

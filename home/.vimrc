@@ -37,8 +37,8 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set mouse=a             " Use mouse everywhere
 set nowrap              " Do not wrap line
-" set tw=120              " Text width
-" set linebreak           " Break lines at word (requires Wrap lines)
+set tw=80               " Text width
+set linebreak           " Break lines at word (requires Wrap lines)
 set whichwrap+=<,>,h,l,[,] " Wrap lines
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
