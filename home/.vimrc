@@ -28,6 +28,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'bling/vim-airline'
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'townk/vim-autoclose'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " Initialize plugin system
 call plug#end()
