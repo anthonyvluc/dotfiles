@@ -118,3 +118,5 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 # Ruby
 export NLS_LANG=AMERICAN_AMERICA.WE8ISO8859P1
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

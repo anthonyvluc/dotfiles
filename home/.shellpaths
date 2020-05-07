@@ -16,3 +16,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export DYLD_LIBRARY_PATH="/etc/oracle/instantclient"
 export TNS_ADMIN="$DYLD_LIBRARY_PATH/network/admin"
 export PATH="$PATH:$DYLD_LIBRARY_PATH"
+
+# Ripgrep
+export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
+export PATH="$PATH:$RIPGREP_CONFIG_PATH"
