@@ -85,7 +85,8 @@ go_brew () {
         sublime-text \
         virtualbox \
         visual-studio-code \
-        vlc
+        vlc \
+        workflowy
 
     # Personal #
     brew install \
@@ -95,6 +96,7 @@ go_brew () {
         adobe-creative-cloud \
         adobe-acrobat-reader \
         aerial \
+        anki \
         calibre \
         dash \
         discord \

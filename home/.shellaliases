@@ -8,11 +8,11 @@ alias g=git
 ############################################
 # Custom Implementations
 ############################################
-alias cp='gcp -iv'                          # Preferred 'cp' implementation
+alias cp='cp -iv'                           # Preferred 'cp' implementation
 alias ls='gls -Gp --color=always'           # Preferred ‘ls’ implementation
 alias grep='grep --color=always'            # Preferred 'grep' implementation
 alias rg='rg --color always'                # Preferred 'rg' implementation
-alias mv='gmv -iv'                          # Preferred 'mv' implementation
+alias mv='mv -iv'                           # Preferred 'mv' implementation
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
 alias ll='gls -FGlAhp'                      # Preferred 'ls' implementation
 cd() { builtin cd "$@"; ls; }               # Always print ls 'cd'
