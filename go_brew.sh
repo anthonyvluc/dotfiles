@@ -61,6 +61,7 @@ go_brew () {
         typescript \
         wget \
         xsv \
+        yarn \
         zsh
 
     brew cask install \

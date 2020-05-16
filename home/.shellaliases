@@ -35,6 +35,7 @@ alias path='echo -e ${PATH//:/\\n}'         # Echo all executable Paths
 alias rl='source ~/.zshrc; source ~/.shell*' # Reload shell configuration
 alias pbcp='pbcopy'
 alias pbp='pbpaste'
+alias be='bundle exec'
 
 ############################################
 # MacOS Specific - todo
