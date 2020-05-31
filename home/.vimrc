@@ -37,8 +37,8 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set mouse=a             " Use mouse everywhere
 set nowrap              " Do not wrap line
-" set tw=120              " Text width
-" set linebreak           " Break lines at word (requires Wrap lines)
+"set tw=120              " Text width
+"set linebreak           " Break lines at word (requires Wrap lines)
 set whichwrap+=<,>,h,l,[,] " Wrap lines
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -49,8 +49,8 @@ set showmatch           " Highlight matching brace
 set novisualbell        " Dont' use visual bell
 set noerrorbells        " Don't beep
 set ruler               " Show row and column ruler information
-set list                " Ensure we  show tabs
-set listchars=tab:>-,trail:- " Show tabs and trailing whitespace
+set list                " Ensure we show tabs
+set listchars=tab:>·,trail:· " Show tabs and trailing whitespace
 set cmdheight=1         " Command window height
 set scrolloff=5         " Keep 5 lines for (top/bottom) scope
 set laststatus=2        " Always show the status line
@@ -69,12 +69,12 @@ set ignorecase          " Always case-insensitive
 " Whitespace
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set autoindent          " Auto-indent new lines
-set softtabstop=4       " Number of spaces per Tab
-set shiftwidth=4        " Number of auto-indent spaces
 set tabstop=4           " Real tabs should be 4, but they will show with set list on
+"set softtabstop=4       " Number of spaces per Tab
+set shiftwidth=4        " Number of auto-indent spaces
 set smartindent         " Enable smart-indent
 set smarttab            " Enable smart-tabs
-set expandtab           " Use spaces instead of tabs
+"set expandtab           " Use spaces instead of tabs
 set copyindent          "
 set preserveindent      "
 set cindent             " C-Style indenting
@@ -125,3 +125,11 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set modelines=0
 set nomodeline
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" File-Based Settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"autocmd FileType python setlocal shiftwidth=4 softtabstop=4 expandtab
+autocmd FileType c,cpp setlocal ts=8 sw=8 sts=8 noet
+autocmd FileType go setlocal ts=8 sw=8 sts=8 noet
+autocmd FileType markdown setlocal spell
