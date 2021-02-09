@@ -2,7 +2,8 @@ cpdeploy() {
     RFCNO=$1
     URL=$2
     echo -n "sudo do_autodeploy -rfc $RFCNO -db bnrtest -dev aluc -url $URL
-sudo do_autodeploy -rfc $RFCNO -db bnrprod -dev aluc -url $URL" | pbcopy
+sudo do_autodeploy -rfc $RFCNO -db bnrprod -dev aluc -url $URL
+See developer for backout plan based on error/issue." | pbcopy
     pbpaste
 }
 

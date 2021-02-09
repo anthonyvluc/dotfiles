@@ -29,6 +29,8 @@ Plug 'bling/vim-airline'
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'townk/vim-autoclose'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+" Syntax
+Plug 'slim-template/vim-slim'
 
 " Initialize plugin system
 call plug#end()
