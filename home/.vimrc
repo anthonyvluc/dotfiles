@@ -25,9 +25,11 @@ Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
 Plug 'bling/vim-airline'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'townk/vim-autoclose'
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'mattn/emmet-vim'
 
 " Initialize plugin system
 call plug#end()
@@ -40,6 +42,7 @@ set nowrap              " Do not wrap line
 "set tw=120              " Text width
 "set linebreak           " Break lines at word (requires Wrap lines)
 set whichwrap+=<,>,h,l,[,] " Wrap lines
+set pastetoggle=<F2>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim UI
@@ -132,4 +135,6 @@ set nomodeline
 "autocmd FileType python setlocal shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType c,cpp setlocal ts=8 sw=8 sts=8 noet
 autocmd FileType go setlocal ts=8 sw=8 sts=8 noet
+autocmd FileType rb setlocal ts=2 sw=2 sts=2 et
+autocmd FileType yaml setlocal ts=2 sw=2 sts=2 et
 autocmd FileType markdown setlocal spell
