@@ -51,8 +51,8 @@ macos() {
     running "Disable the “Are you sure you want to open this application?” dialog"
     defaults write com.apple.LaunchServices LSQuarantine -bool false; ok
 
-    running "Remove duplicates in the “Open With” menu (also see 'lscleanup' alias)"
-    /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user; ok
+    #running "Remove duplicates in the “Open With” menu (also see 'lscleanup' alias)"
+    #/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user; ok
 
     running "Disable automatic termination of inactive apps"
     defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true; ok
