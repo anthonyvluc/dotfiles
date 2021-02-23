@@ -64,7 +64,7 @@ go_brew () {
         yarn \
         zsh
 
-    brew cask install \
+    brew install --cask \
         alfred \
         clipy \
         iterm2 \
@@ -93,7 +93,7 @@ go_brew () {
     brew install \
         youtube-dl
 
-    brew cask install \
+    brew install --cask \
         adobe-creative-cloud \
         adobe-acrobat-reader \
         aerial \
@@ -126,7 +126,7 @@ go_brew () {
         vbindiff \
         weechat
 
-    brew cask install \
+    brew install --cask \
         aerial \
         epubquicklook \
         darktable \
