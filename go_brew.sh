@@ -57,6 +57,7 @@ go_brew () {
         ripgrep \
         rsync \
         ruby \
+        svn \
         tmux \
         typescript \
         wget \
@@ -155,7 +156,7 @@ go_brew () {
     # TODO: Fonts
     # Fonts #
     brew tap homebrew/cask-fonts
-    brew cask install 'font-lato' \
+    brew install --cask 'font-lato' \
         'font-open-sans' \
         'font-roboto' \
         'font-roboto-mono' \
