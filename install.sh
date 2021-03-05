@@ -7,10 +7,10 @@ source ./lib/utils.sh
 # Do we need to ask for sudo password or is it already passwordless?
 grep -q 'NOPASSWD:     ALL' /etc/sudoers.d/$LOGNAME > /dev/null 2>&1
 if [ $? -ne 0 ]; then
-  bot "No sudoer file"
-  sudo -v
-  # Keep-alive: update existing sudo time stamp until the script has finished
-  while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+    bot "No sudoer file"
+    sudo -v
+    # Keep-alive: update existing sudo time stamp until the script has finished
+    while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 fi
 
 #############################################
@@ -150,9 +150,9 @@ fi
 bot "Setting Default Shell"
 CURRENTSHELL=$(dscl . -read /Users/$USER UserShell | awk '{print $2}')
 if [[ "$CURRENTSHELL" != "/usr/local/bin/zsh" ]]; then
-  bot "Setting newer Homebrew zsh (/usr/local/bin/zsh) as your shell (password required)"
-  sudo dscl . -change /Users/$USER UserShell $SHELL /usr/local/bin/zsh > /dev/null 2>&1
-  ok
+    bot "Setting newer Homebrew zsh (/usr/local/bin/zsh) as your shell (password required)"
+    sudo dscl . -change /Users/$USER UserShell $SHELL /usr/local/bin/zsh > /dev/null 2>&1
+    ok
 fi
 
 #############################################
@@ -190,11 +190,11 @@ fi
 bot "VIM Setup"
 ask "Do you want to install vim plugins now?"
 if [[ $? == 0 ]]; then
-  bot "Installing vim plugins"
-  vim +PlugInstall +qall > /dev/null 2>&1
-  ok
+    bot "Installing vim plugins"
+    vim +PlugInstall +qall > /dev/null 2>&1
+    ok
 else
-  ok "skipped. Install by running :PlugInstall within vim"
+    ok "skipped. Install by running :PlugInstall within vim"
 fi
 
 #############################################
