@@ -200,8 +200,10 @@ fi
 #############################################
 # System Settings                           #
 #############################################
-bot "System Settings"
-source ./macos.sh
-macos
+if [[ `uname` == 'Darwin' ]]; then
+    bot "System Settings"
+    source ./macos.sh
+    macos
+fi
 
 bot "Installation successfully completed!"
