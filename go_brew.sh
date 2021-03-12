@@ -15,6 +15,8 @@ go_brew () {
     brew install findutils
     # Install GNU `sed`, overwriting the built-in `sed`.
     brew install gnu-sed
+    # Install GNU `awk`
+    brew install gawk
     # Install Bash 4.
     # brew install bash
     # brew install bash-completion2
@@ -31,7 +33,6 @@ go_brew () {
     brew install \
         bash \
         cmake \
-        coreutils \
         curl \
         dos2unix \
         fzf \
