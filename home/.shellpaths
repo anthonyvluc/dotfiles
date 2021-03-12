@@ -2,6 +2,10 @@
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
 
+# GNU Coreutils
+#PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+#PATH="$(brew --prefix coreutils)/libexec/gnuman:$PATH"
+
 # Go
 export GOPATH="${HOME}/.go"
 export GOROOT="$(brew --prefix golang)/libexec"
